@@ -1,10 +1,11 @@
-document.getElementById("submitButton").addEventListener("click", function() {
-    // Get the user input value
-    var userInputValue = document.getElementById("userInput").value;
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("submitButton").addEventListener("click", function() {
+        // Get the user input value
+        var userInputValue = document.getElementById("userInput").value;
 
-    // Check whether the input is empty or not
-    if (userInput !== "") {
-        
+        // Check whether the input is empty or not
+        if (userInputValue !== "") {
+
             // Use AJAX to pass the username to info.php
             var request = new XMLHttpRequest();
 
@@ -26,9 +27,10 @@ document.getElementById("submitButton").addEventListener("click", function() {
                     }
                 }
             };
-            request.send("username=" + encodeURIComponent(userInput));
+            request.send("username=" + encodeURIComponent(userInputValue));
         } else {
             // Handle the case where the username will be empty
-            document.getElementById("result").innerHTML = "<p class='error'>Key in username and click submit</p>";
+            document.getElementById("result").innerHTML = "<p class='infoEmpty'>Key in username and click submit</p>";
         }
+    });
 });
