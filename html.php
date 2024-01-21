@@ -30,6 +30,18 @@
             cursor: pointer;
             margin-left: 160px;
         }
+
+        .success {
+        color: green;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .infoEmpty {
+        color: green;
+        }
 	</style>
 </head>
 <body>
